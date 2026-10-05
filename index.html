@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowery Skin Aesthetics | Neumorphic Luxury Edition</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Luxury Serif and Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Luxury Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neuBg: '#F4EFEA',
+                        neuLight: '#FFFFFF',
+                        neuDark: '#D5CEC5',
+                        goldAccent: '#D4AF37',
+                        goldLight: '#F7E7CE',
+                        goldDark: '#AA771C',
+                        espresso: '#4A3B32',
+                        softBlack: '#2C221E'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neu-flat': '9px 9px 18px #d5cec5, -9px -9px 18px #ffffff',
+                        'neu-pressed': 'inset 6px 6px 12px #d5cec5, inset -6px -6px 12px #ffffff',
+                        'neu-sm': '5px 5px 10px #d5cec5, -5px -5px 10px #ffffff',
+                        'neu-button': '6px 6px 12px #d5cec5, -6px -6px 12px #ffffff',
+                        'neu-button-active': 'inset 4px 4px 8px #d5cec5, inset -4px -4px 8px #ffffff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F4EFEA;
+            color: #4A3B32;
+            min-height: 100vh;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #2C221E;
+        }
+        /* Neumorphic tactile utility classes */
+        .neu-card {
+            background: #F4EFEA;
+            box-shadow: 9px 9px 18px #d5cec5, -9px -9px 18px #ffffff;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .neu-card-inset {
+            background: #F4EFEA;
+            box-shadow: inset 6px 6px 12px #d5cec5, inset -6px -6px 12px #ffffff;
+            border-radius: 1rem;
+        }
+        .neu-btn {
+            background: #F4EFEA;
+            box-shadow: 6px 6px 12px #d5cec5, -6px -6px 12px #ffffff;
+            transition: all 0.2s ease;
+        }
+        .neu-btn:hover {
+            box-shadow: 4px 4px 8px #d5cec5, -4px -4px 8px #ffffff;
+            color: #D4AF37;
+        }
+        .neu-btn:active, .neu-btn.active {
+            box-shadow: inset 4px 4px 8px #d5cec5, inset -4px -4px 8px #ffffff;
+            color: #AA771C;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #AA771C 0%, #D4AF37 50%, #C5A059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-200 selection:text-amber-900 pb-16">
+
+    
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-neuBg/95 backdrop-blur-md shadow-neu-sm border-b border-neuDark/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                    <div class="w-11 h-11 rounded-2xl neu-card flex items-center justify-center shadow-neu-sm">
+                        <i class="fa-solid fa-spa text-goldDark text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-bold font-serif gold-gradient-text tracking-wide">Glowery</span>
+                        <span class="block text-[10px] tracking-widest text-espresso uppercase font-semibold">Skin Aesthetics</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links (All 9 pages required) -->
+                <nav class="hidden xl:flex items-center space-x-3 text-xs font-semibold text-espresso">
+                    <button onclick="switchTab('home')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="home">Home</button>
+                    <button onclick="switchTab('clinic')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="clinic">The Clinic</button>
+                    <button onclick="switchTab('treatments')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="treatments">Treatments</button>
+                    <button onclick="switchTab('promos')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="promos">Popular Promo</button>
+                    <button onclick="switchTab('specials')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="specials">Specials</button>
+                    <button onclick="switchTab('shop')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="shop">Shop</button>
+                    <button onclick="switchTab('contact')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="contact">Contact</button>
+                    <button onclick="switchTab('members')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="members">Members</button>
+                    <button onclick="switchTab('programs')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="programs">Program List</button>
+                    <button onclick="switchTab('events')" class="nav-link px-3 py-2 rounded-xl neu-btn transition-all" data-target="events">Events</button>
+                </nav>
+
+                <!-- Dynamic Header Action Icons -->
+                <div class="flex items-center space-x-4">
+                    <!-- Music Widget (Home Only) -->
+                    <div id="header-music-container" class="hidden items-center">
+                        <button id="music-toggle-btn" onclick="toggleBackgroundMusic()" class="relative p-3 rounded-full neu-btn text-goldDark transition shadow-neu-sm" title="Toggle Background Music">
+                            <i id="music-icon" class="fa-solid fa-music text-base"></i>
+                            <span id="music-strike" class="absolute inset-0 flex items-center justify-center text-red-600 font-bold text-lg pointer-events-none hidden">
+                                <i class="fa-solid fa-slash"></i>
+                            </span>
+                        </button>
+                        <audio id="bg-audio" loop>
+                            <source src="https://actions.google.com/sounds/v1/ambiences/spa_music.ogg" type="audio/ogg">
+                        </audio>
+                    </div>
+
+                    <!-- Cart Icon (Shop Only) -->
+                    <div id="header-cart-container" class="hidden items-center">
+                        <button onclick="toggleCartDrawer()" class="relative p-3 rounded-full neu-btn text-espresso transition shadow-neu-sm" title="View Cart">
+                            <i class="fa-solid fa-cart-shopping text-base"></i>
+                            <span id="cart-badge" class="absolute -top-1 -right-1 bg-goldDark text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="xl:hidden p-3 rounded-2xl neu-btn text-espresso">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-neuBg border-t border-neuDark/30 px-6 py-4 space-y-2 shadow-neu-flat">
+            <button onclick="switchTab('home'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Home</button>
+            <button onclick="switchTab('clinic'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">The Clinic</button>
+            <button onclick="switchTab('treatments'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Treatments</button>
+            <button onclick="switchTab('promos'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Our Popular Promo</button>
+            <button onclick="switchTab('specials'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Specials</button>
+            <button onclick="switchTab('shop'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Shop</button>
+            <button onclick="switchTab('contact'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Contact</button>
+            <button onclick="switchTab('members'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Members</button>
+            <button onclick="switchTab('programs'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Program List</button>
+            <button onclick="switchTab('events'); toggleMobileMenu();" class="block w-full text-left px-4 py-3 rounded-xl neu-btn font-semibold text-espresso">Events</button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <!-- ================= 1. HOME NAVIGATION PAGE ================= -->
+        <section id="page-home" class="tab-content space-y-16">
+            <!-- Hero Banner -->
+            <div class="neu-card p-8 sm:p-16 text-center relative overflow-hidden">
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark border border-amber-200">
+                        ✨ Neumorphic Soft Tactile Aesthetics
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl font-bold font-serif text-softBlack leading-tight">
+                        Timeless Elegance & <span class="gold-gradient-text">Radiant Skin</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-espresso/80 max-w-2xl mx-auto">
+                        Experience the ultimate fusion of modern dermatological science and soft tactile luxury in an serene sanctuary of white, cream, and gold.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <button onclick="switchTab('treatments')" class="w-full sm:w-auto px-8 py-4 rounded-2xl neu-btn font-semibold text-goldDark shadow-neu-sm">
+                            Explore Treatments
+                        </button>
+                        <button onclick="switchTab('clinic')" class="w-full sm:w-auto px-8 py-4 rounded-2xl neu-card font-semibold text-espresso shadow-neu-sm">
+                            About The Clinic
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Section -->
+            <div class="space-y-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-softBlack">Skincare Journal & Blog</h2>
+                        <p class="text-sm text-espresso/70">Expert advice and soft tactile insights for flawless skin.</p>
+                    </div>
+                    <button onclick="switchTab('programs')" class="text-sm font-semibold text-goldDark hover:text-goldLight flex items-center gap-2">
+                        View All <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-goldDark uppercase tracking-wider">Aesthetics</span>
+                            <h3 class="text-xl font-serif font-bold text-softBlack mt-2 mb-3">The Secret to 24K Gold Facial Rejuvenation</h3>
+                            <p class="text-sm text-espresso/70 line-clamp-3">Discover how pure micro-gold particles stimulate deep collagen production and restore youthful luminosity.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neuDark/20 flex items-center justify-between text-xs text-espresso/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 4 min read</span>
+                            <span class="text-goldDark font-semibold cursor-pointer" onclick="switchTab('blog')">Read Article</span>
+                        </div>
+                    </div>
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-goldDark uppercase tracking-wider">Skincare Tips</span>
+                            <h3 class="text-xl font-serif font-bold text-softBlack mt-2 mb-3">Hydration vs. Moisture: Essential Barrier Care</h3>
+                            <p class="text-sm text-espresso/70 line-clamp-3">Master the delicate balance of locking in essential water and lipid barriers for pristine skin texture.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neuDark/20 flex items-center justify-between text-xs text-espresso/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 6 min read</span>
+                            <span class="text-goldDark font-semibold cursor-pointer" onclick="switchTab('blog')">Read Article</span>
+                        </div>
+                    </div>
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-goldDark uppercase tracking-wider">Anti-Aging</span>
+                            <h3 class="text-xl font-serif font-bold text-softBlack mt-2 mb-3">Non-Invasive Skin Tightening Breakthroughs</h3>
+                            <p class="text-sm text-espresso/70 line-clamp-3">Explore state-of-the-art radiofrequency and ultrasound technologies designed to lift without downtime.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neuDark/20 flex items-center justify-between text-xs text-espresso/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 5 min read</span>
+                            <span class="text-goldDark font-semibold cursor-pointer" onclick="switchTab('blog')">Read Article</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shop Highlight Section -->
+            <div class="space-y-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-softBlack">Shop Highlight</h2>
+                        <p class="text-sm text-espresso/70">Bring the clinic experience home with our elite skincare formulations.</p>
+                    </div>
+                    <button onclick="switchTab('shop')" class="text-sm font-semibold text-goldDark hover:text-goldLight flex items-center gap-2">
+                        Visit Shop <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div class="h-44 neu-card-inset flex items-center justify-center relative mb-4">
+                            <i class="fa-solid fa-bottle-droplet text-5xl text-goldDark"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-softBlack">24K Gold Radiance Elixir</h3>
+                            <p class="text-xs text-espresso/70 mt-1">Intensive firming serum infused with pure gold flakes.</p>
+                        </div>
+                        <button onclick="switchTab('shop')" class="mt-4 w-full py-2.5 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                            View in Shop
+                        </button>
+                    </div>
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div class="h-44 neu-card-inset flex items-center justify-center relative mb-4">
+                            <i class="fa-solid fa-jar text-5xl text-goldDark"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-softBlack">Velvet Hydration Cream</h3>
+                            <p class="text-xs text-espresso/70 mt-1">Deep moisture barrier repair cream for luminous skin.</p>
+                        </div>
+                        <button onclick="switchTab('shop')" class="mt-4 w-full py-2.5 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                            View in Shop
+                        </button>
+                    </div>
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div class="h-44 neu-card-inset flex items-center justify-center relative mb-4">
+                            <i class="fa-solid fa-wand-magic-sparkles text-5xl text-goldDark"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-softBlack">Platinum Collagen Mask</h3>
+                            <p class="text-xs text-espresso/70 mt-1">Overnight revitalizing treatment for ultimate smoothness.</p>
+                        </div>
+                        <button onclick="switchTab('shop')" class="mt-4 w-full py-2.5 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                            View in Shop
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Feedback & Google Review Embed Style -->
+            <div class="space-y-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-serif font-bold text-softBlack">Customer Feedback & Google Reviews</h2>
+                    <p class="text-sm text-espresso/70 mt-2">Verified experiences from our esteemed clientele.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-500 mb-3 space-x-1 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-sm italic text-espresso/80">"The absolute pinnacle of luxury skincare! The staff made me feel like royalty and my skin has never looked more luminous."</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neuDark/20 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-softBlack">Victoria Sterling</span>
+                            <span class="text-espresso/60"><i class="fa-brands fa-google text-goldDark mr-1"></i> Google Verified</span>
+                        </div>
+                    </div>
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-500 mb-3 space-x-1 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-sm italic text-espresso/80">"Incredible skin tightening results after just two sessions. The clinic atmosphere is breathtakingly calming."</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neuDark/20 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-softBlack">Sophia Al-Mansoor</span>
+                            <span class="text-espresso/60"><i class="fa-brands fa-google text-goldDark mr-1"></i> Google Verified</span>
+                        </div>
+                    </div>
+                    <div class="neu-card p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-500 mb-3 space-x-1 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-sm italic text-espresso/80">"From the bespoke facials to the personalized home care routine, Glowery Skin Aesthetics is truly unmatched."</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neuDark/20 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-softBlack">Claire Dupont</span>
+                            <span class="text-espresso/60"><i class="fa-brands fa-google text-goldDark mr-1"></i> Google Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 2. THE CLINIC NAVIGATION PAGE ================= -->
+        <section id="page-clinic" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Sanctuary of Excellence
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">The Clinic</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    Where advanced dermatological science meets soft tactile luxury and uncompromising standards of care.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="neu-card p-8 sm:p-10 space-y-4">
+                    <h2 class="text-2xl font-serif font-bold text-softBlack">About Us</h2>
+                    <p class="text-espresso/80 text-sm leading-relaxed">
+                        Founded with a singular vision to elevate aesthetic medicine into an art form, Glowery Skin Aesthetics provides an exclusive sanctuary where clients experience transformative results through master-level care.
+                    </p>
+                </div>
+                <div class="neu-card p-8 sm:p-10 space-y-4">
+                    <h2 class="text-2xl font-serif font-bold text-softBlack">Our Mission</h2>
+                    <p class="text-espresso/80 text-sm leading-relaxed">
+                        To empower every individual with radiant skin and renewed self-confidence through bespoke, science-backed treatments delivered in an atmosphere of serene elegance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="neu-card p-8 sm:p-10 space-y-4">
+                    <h2 class="text-2xl font-serif font-bold text-softBlack">Our Commitment to Excellence</h2>
+                    <p class="text-espresso/80 text-sm leading-relaxed">
+                        We pledge unwavering dedication to safety, premium clinical equipment, and continuous innovation. Every protocol is tested to ensure optimal dermal health.
+                    </p>
+                </div>
+                <div class="neu-card p-8 sm:p-10 space-y-4">
+                    <h2 class="text-2xl font-serif font-bold text-softBlack">Expert Care</h2>
+                    <p class="text-espresso/80 text-sm leading-relaxed">
+                        Our world-class team consists of certified dermatological nurses, master cosmetologists, and wellness specialists who undergo rigorous ongoing global training.
+                    </p>
+                </div>
+            </div>
+
+            <div class="neu-card p-8 sm:p-12 text-center max-w-4xl mx-auto space-y-8">
+                <h2 class="text-3xl font-serif font-bold text-softBlack">Personalized Results</h2>
+                <p class="text-espresso/80 text-sm leading-relaxed max-w-2xl mx-auto">
+                    No two skins are alike. We reject one-size-fits-all solutions, conducting comprehensive diagnostic skin analyses to formulate a bespoke treatment trajectory.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 text-left">
+                    <div class="neu-card-inset p-6 space-y-2">
+                        <div class="w-10 h-10 rounded-xl neu-card flex items-center justify-center text-goldDark font-bold mb-3">
+                            <i class="fa-solid fa-wand-magic"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-softBlack">Transform Your Skin</h3>
+                        <p class="text-xs text-espresso/70">Reverse signs of aging, clear blemishes, and restore deep cellular hydration.</p>
+                    </div>
+                    <div class="neu-card-inset p-6 space-y-2">
+                        <div class="w-10 h-10 rounded-xl neu-card flex items-center justify-center text-goldDark font-bold mb-3">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-softBlack">Enhance Your Confidence</h3>
+                        <p class="text-xs text-espresso/70">Walk out with your head held high, radiating absolute poise and natural beauty.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. TREATMENTS NAVIGATION PAGE ================= -->
+        <section id="page-treatments" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Comprehensive Portfolio
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">Our Treatments</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    Glowery Skin Aesthetics offers an extensive array of advanced aesthetic services, meticulously designed to cater to the unique needs of each individual.
+                </p>
+            </div>
+
+            <!-- Treatment Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="neu-card p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl neu-card-inset flex items-center justify-center text-goldDark text-xl"><i class="fa-solid fa-face-smile"></i></div>
+                    <h3 class="text-xl font-serif font-bold text-softBlack">Facial Treatments</h3>
+                    <p class="text-xs text-espresso/70">Advanced facial procedures, including customized facials and skin rejuvenation therapies.</p>
+                </div>
+                <div class="neu-card p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl neu-card-inset flex items-center justify-center text-goldDark text-xl"><i class="fa-solid fa-spa"></i></div>
+                    <h3 class="text-xl font-serif font-bold text-softBlack">Body Treatments</h3>
+                    <p class="text-xs text-espresso/70">Specialized body treatments, encompassing wraps, scrubs, and massage therapies.</p>
+                </div>
+                <div class="neu-card p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl neu-card-inset flex items-center justify-center text-goldDark text-xl"><i class="fa-solid fa-feather"></i></div>
+                    <h3 class="text-xl font-serif font-bold text-softBlack">Hair Removal</h3>
+                    <p class="text-xs text-espresso/70">Permanent hair removal solutions, ensuring smooth and hair-free skin.</p>
+                </div>
+                <div class="neu-card p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl neu-card-inset flex items-center justify-center text-goldDark text-xl"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 class="text-xl font-serif font-bold text-softBlack">Skin Tightening</h3>
+                    <p class="text-xs text-espresso/70">Non-invasive skin tightening treatments, utilizing cutting-edge technology to restore youthfulness.</p>
+                </div>
+                <div class="neu-card p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl neu-card-inset flex items-center justify-center text-goldDark text-xl"><i class="fa-solid fa-eye"></i></div>
+                    <h3 class="text-xl font-serif font-bold text-softBlack">Brow & Lash Extensions</h3>
+                    <p class="text-xs text-espresso/70">Expertly applied brow and lash extensions, enhancing natural features with precision.</p>
+                </div>
+                <div class="neu-card p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl neu-card-inset flex items-center justify-center text-goldDark text-xl"><i class="fa-solid fa-hand-sparkles"></i></div>
+                    <h3 class="text-xl font-serif font-bold text-softBlack">Nail Services</h3>
+                    <p class="text-xs text-espresso/70">Comprehensive nail care, including manicures, pedicures, nail art, and extensions.</p>
+                </div>
+                <div class="neu-card p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl neu-card-inset flex items-center justify-center text-goldDark text-xl"><i class="fa-solid fa-water"></i></div>
+                    <h3 class="text-xl font-serif font-bold text-softBlack">Spa Services</h3>
+                    <p class="text-xs text-espresso/70">Relaxing spa treatments, featuring massages and facials, promoting overall well-being.</p>
+                </div>
+                <div class="neu-card p-6 space-y-3 md:col-span-2">
+                    <div class="w-12 h-12 rounded-xl neu-card-inset flex items-center justify-center text-goldDark text-xl"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3 class="text-xl font-serif font-bold text-softBlack">Physical Therapy Services</h3>
+                    <p class="text-xs text-espresso/70">Personalized physical therapy programs, tailored to support optimal health and mobility.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. OUR POPULAR PROMO NAVIGATION PAGE ================= -->
+        <section id="page-promos" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Exclusive Packages
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">Our Popular Promo</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    Select your preferred options and book your transformative promotional session today.
+                </p>
+            </div>
+
+            <!-- Card View Promos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Promo 1 -->
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-44 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-gem text-5xl text-goldDark"></i>
+                        <span class="absolute top-3 left-3 bg-goldDark text-white px-3 py-1 rounded-full text-[10px] font-bold">Top Promo</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-softBlack">24K Gold Ultimate Glow</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Full facial rejuvenation + LED therapy + Collagen infusion.</p>
+                    </div>
+                    <div class="space-y-3 pt-2 border-t border-neuDark/20">
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Select Option</label>
+                            <select class="w-full text-xs p-2.5 neu-card-inset border-none text-espresso focus:outline-none">
+                                <option>Standard Session (60 mins)</option>
+                                <option>VIP Extended Session (90 mins)</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-espresso">
+                            <span><i class="fa-regular fa-clock"></i> 60 - 90 mins</span>
+                            <span class="text-lg font-bold font-serif text-goldDark">$249</span>
+                        </div>
+                    </div>
+                    <button onclick="bookTreatment('24K Gold Ultimate Glow')" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Promo 2 -->
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-44 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-spa text-5xl text-goldDark"></i>
+                        <span class="absolute top-3 left-3 bg-goldDark text-white px-3 py-1 rounded-full text-[10px] font-bold">Best Value</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-softBlack">Silk & Smooth Body Ritual</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Exfoliating scrub, hydrating body wrap, and aromatherapy massage.</p>
+                    </div>
+                    <div class="space-y-3 pt-2 border-t border-neuDark/20">
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Select Option</label>
+                            <select class="w-full text-xs p-2.5 neu-card-inset border-none text-espresso focus:outline-none">
+                                <option>Full Body Care (90 mins)</option>
+                                <option>Deluxe Package with Facial (120 mins)</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-espresso">
+                            <span><i class="fa-regular fa-clock"></i> 90 - 120 mins</span>
+                            <span class="text-lg font-bold font-serif text-goldDark">$320</span>
+                        </div>
+                    </div>
+                    <button onclick="bookTreatment('Silk & Smooth Body Ritual')" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Promo 3 -->
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-44 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-bolt text-5xl text-goldDark"></i>
+                        <span class="absolute top-3 left-3 bg-goldDark text-white px-3 py-1 rounded-full text-[10px] font-bold">Anti-Aging</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-softBlack">RF Skin Tightening Lift</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Advanced radiofrequency face and neck contouring session.</p>
+                    </div>
+                    <div class="space-y-3 pt-2 border-t border-neuDark/20">
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Select Option</label>
+                            <select class="w-full text-xs p-2.5 neu-card-inset border-none text-espresso focus:outline-none">
+                                <option>Single Session (45 mins)</option>
+                                <option>Course of 3 Sessions</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-espresso">
+                            <span><i class="fa-regular fa-clock"></i> 45 mins</span>
+                            <span class="text-lg font-bold font-serif text-goldDark">$189</span>
+                        </div>
+                    </div>
+                    <button onclick="bookTreatment('RF Skin Tightening Lift')" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. SPECIALS NAVIGATION PAGE ================= -->
+        <section id="page-specials" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Limited Time Offerings
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">Specials & Seasonal Bundles</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    Indulge in our exclusive discounted packages designed for maximum tactile relaxation and radiance.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="neu-card p-8 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-neuCard neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark uppercase">Seasonal Special</span>
+                        <h3 class="text-2xl font-serif font-bold text-softBlack mt-4">The Royal Bride Glow Package</h3>
+                        <p class="text-espresso/80 text-sm mt-2 leading-relaxed">Prepare for your special day with 3 custom 24K gold facials, body contouring sessions, and a complimentary take-home luxury skincare kit.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-neuDark/20">
+                        <div>
+                            <span class="text-xs text-espresso/50 line-through block">$850</span>
+                            <span class="text-2xl font-bold font-serif text-goldDark">$649</span>
+                        </div>
+                        <button onclick="bookTreatment('Royal Bride Glow Package')" class="px-6 py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                            Claim Special
+                        </button>
+                    </div>
+                </div>
+
+                <div class="neu-card p-8 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-neuCard neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark uppercase">VIP Exclusive</span>
+                        <h3 class="text-2xl font-serif font-bold text-softBlack mt-4">Autumn Renewal & Anti-Aging Duo</h3>
+                        <p class="text-espresso/80 text-sm mt-2 leading-relaxed">Combines non-invasive radiofrequency skin tightening with a deep pore detox facial for flawless texture and elasticity.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-neuDark/20">
+                        <div>
+                            <span class="text-xs text-espresso/50 line-through block">$500</span>
+                            <span class="text-2xl font-bold font-serif text-goldDark">$379</span>
+                        </div>
+                        <button onclick="bookTreatment('Autumn Renewal Duo')" class="px-6 py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                            Claim Special
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 6. SHOP NAVIGATION PAGE ================= -->
+        <section id="page-shop" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Clinic-Grade Home Care
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">Glowery Skincare Shop</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    Purchase our award-winning serums, creams, and masks directly to maintain radiant results.
+                </p>
+            </div>
+
+            <!-- Shop Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-52 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-bottle-droplet text-6xl text-goldDark"></i>
+                        <span class="absolute top-3 right-3 neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark">$120</span>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-softBlack">24K Gold Radiance Elixir</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Intensive firming serum infused with pure gold flakes for instant luminosity.</p>
+                    </div>
+                    <button onclick="addToCart('24K Gold Radiance Elixir', 120)" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-52 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-jar text-6xl text-goldDark"></i>
+                        <span class="absolute top-3 right-3 neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark">$95</span>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-softBlack">Velvet Hydration Cream</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Deep moisture barrier repair cream enriched with ceramides and peptides.</p>
+                    </div>
+                    <button onclick="addToCart('Velvet Hydration Cream', 95)" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-52 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-wand-magic-sparkles text-6xl text-goldDark"></i>
+                        <span class="absolute top-3 right-3 neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark">$150</span>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-softBlack">Platinum Collagen Mask</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Overnight revitalizing treatment for ultimate skin smoothness and elasticity.</p>
+                    </div>
+                    <button onclick="addToCart('Platinum Collagen Mask', 150)" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-52 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-sun text-6xl text-goldDark"></i>
+                        <span class="absolute top-3 right-3 neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark">$75</span>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-softBlack">Solar Shield SPF 50+</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Invisible mineral sunscreen with antioxidant protection and zero white cast.</p>
+                    </div>
+                    <button onclick="addToCart('Solar Shield SPF 50+', 75)" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-52 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-droplet text-6xl text-goldDark"></i>
+                        <span class="absolute top-3 right-3 neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark">$110</span>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-softBlack">Hyaluronic Acid Booster</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Multi-molecular weight hyaluronic acid for deep multi-layer skin plumpness.</p>
+                    </div>
+                    <button onclick="addToCart('Hyaluronic Acid Booster', 110)" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <div class="neu-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="h-52 neu-card-inset flex items-center justify-center relative">
+                        <i class="fa-solid fa-eye text-6xl text-goldDark"></i>
+                        <span class="absolute top-3 right-3 neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark">$85</span>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-softBlack">Luminous Eye Contour Cream</h3>
+                        <p class="text-xs text-espresso/70 mt-1">Targeted peptide treatment to diminish dark circles and fine lines.</p>
+                    </div>
+                    <button onclick="addToCart('Luminous Eye Contour Cream', 85)" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. CONTACT NAVIGATION PAGE ================= -->
+        <section id="page-contact" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Connect With Us
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">Contact Our Sanctuaries</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    We welcome your inquiries and look forward to welcoming you to our luxury locations.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Contact Form -->
+                <div class="neu-card p-8 sm:p-10 space-y-6">
+                    <h2 class="text-2xl font-serif font-bold text-softBlack">Send Us a Message</h2>
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Full Name</label>
+                            <input type="text" required class="w-full p-3.5 neu-card-inset border-none text-espresso text-sm focus:outline-none" placeholder="Victoria Sterling">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Email Address</label>
+                            <input type="email" required class="w-full p-3.5 neu-card-inset border-none text-espresso text-sm focus:outline-none" placeholder="victoria@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Message</label>
+                            <textarea rows="4" required class="w-full p-3.5 neu-card-inset border-none text-espresso text-sm focus:outline-none" placeholder="Inquire about our treatments or booking..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl neu-btn font-semibold text-goldDark shadow-neu-sm">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 2 Branches & Map -->
+                <div class="space-y-6">
+                    <div class="neu-card p-6 space-y-3">
+                        <span class="text-xs font-bold text-goldDark uppercase tracking-wider">Branch 1</span>
+                        <h3 class="text-xl font-serif font-bold text-softBlack">Beverly Hills Gold Lounge</h3>
+                        <p class="text-sm text-espresso/80"><i class="fa-solid fa-location-dot text-goldDark mr-2"></i> 450 N Rodeo Drive, Suite 200, Beverly Hills, CA</p>
+                        <p class="text-sm text-espresso/80"><i class="fa-solid fa-phone text-goldDark mr-2"></i> +1 (310) 555-0192</p>
+                        <p class="text-sm text-espresso/80"><i class="fa-solid fa-envelope text-goldDark mr-2"></i> beverlyhills@glowery.com</p>
+                    </div>
+
+                    <div class="neu-card p-6 space-y-3">
+                        <span class="text-xs font-bold text-goldDark uppercase tracking-wider">Branch 2</span>
+                        <h3 class="text-xl font-serif font-bold text-softBlack">Manhattan Luxury Spa</h3>
+                        <p class="text-sm text-espresso/80"><i class="fa-solid fa-location-dot text-goldDark mr-2"></i> 742 Fifth Avenue, 14th Floor, New York, NY</p>
+                        <p class="text-sm text-espresso/80"><i class="fa-solid fa-phone text-goldDark mr-2"></i> +1 (212) 555-8391</p>
+                        <p class="text-sm text-espresso/80"><i class="fa-solid fa-envelope text-goldDark mr-2"></i> manhattan@glowery.com</p>
+                    </div>
+
+                    <div class="neu-card p-6 h-44 flex items-center justify-center text-center">
+                        <div class="space-y-2">
+                            <i class="fa-solid fa-map-location-dot text-3xl text-goldDark"></i>
+                            <p class="text-xs font-semibold text-espresso/70">Interactive Branch Locations Map Preview</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. MEMBERS NAVIGATION PAGE ================= -->
+        <section id="page-members" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Exclusive Community Portal
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">Glow Members Portal</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    Manage your elite membership benefits, rewards, and sign in to your personal dashboard.
+                </p>
+            </div>
+
+            <!-- Members Layout: Count on Left, Sign Up / Sign In on Right (No nav login/register links per instructions) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Left: Member Count & Community Info -->
+                <div class="neu-card p-8 sm:p-12 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex p-4 rounded-2xl neu-card-inset text-goldDark text-3xl mb-2">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h2 class="text-3xl font-serif font-bold text-softBlack">Join Our Thriving Community</h2>
+                    <p class="text-espresso/80 text-base leading-relaxed">
+                        Experience priority bookings, birthday gold facials, and exclusive seasonal discounts reserved for our platform members.
+                    </p>
+                    <div class="pt-4 border-t border-neuDark/20">
+                        <span class="text-4xl sm:text-5xl font-bold font-serif gold-gradient-text block">14,892+</span>
+                        <span class="text-sm font-semibold text-espresso/70 mt-1 block">Active Platform Members Worldwide</span>
+                    </div>
+                </div>
+
+                <!-- Right: Sign Up and Sign In Action Cards -->
+                <div class="neu-card p-8 sm:p-10 space-y-6">
+                    <div class="flex border-b border-neuDark/20 pb-4 space-x-6">
+                        <button onclick="switchAuthTab('signin')" id="btn-tab-signin" class="font-serif font-bold text-lg text-goldDark border-b-2 border-goldDark pb-1">Sign In</button>
+                        <button onclick="switchAuthTab('signup')" id="btn-tab-signup" class="font-serif font-bold text-lg text-espresso/40 pb-1">Sign Up</button>
+                    </div>
+
+                    <!-- Sign In Form -->
+                    <form id="form-signin" onsubmit="handleAuthSubmit(event, 'Sign In')" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Email Address</label>
+                            <input type="email" required class="w-full p-3.5 neu-card-inset border-none text-espresso text-sm focus:outline-none" placeholder="member@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Password</label>
+                            <input type="password" required class="w-full p-3.5 neu-card-inset border-none text-espresso text-sm focus:outline-none" placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl neu-btn font-semibold text-goldDark shadow-neu-sm">
+                            Sign In to Portal
+                        </button>
+                    </form>
+
+                    <!-- Sign Up Form (Hidden by default) -->
+                    <form id="form-signup" onsubmit="handleAuthSubmit(event, 'Sign Up')" class="space-y-4 hidden">
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Full Name</label>
+                            <input type="text" required class="w-full p-3.5 neu-card-inset border-none text-espresso text-sm focus:outline-none" placeholder="Victoria Sterling">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Email Address</label>
+                            <input type="email" required class="w-full p-3.5 neu-card-inset border-none text-espresso text-sm focus:outline-none" placeholder="member@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-espresso mb-1">Create Password</label>
+                            <input type="password" required class="w-full p-3.5 neu-card-inset border-none text-espresso text-sm focus:outline-none" placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl neu-btn font-semibold text-goldDark shadow-neu-sm">
+                            Create Member Account
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 9. PROGRAM LIST NAVIGATION PAGE ================= -->
+        <section id="page-programs" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Membership Tiers
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">Program List</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    Choose from our structured skincare regimens and wellness programs tailored for continuous transformation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="neu-card p-8 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-goldDark uppercase tracking-wider">Tier I</span>
+                        <h3 class="text-2xl font-serif font-bold text-softBlack mt-2">Bronze Glow Program</h3>
+                        <p class="text-sm text-espresso/70 mt-2">Monthly maintenance facial and 10% off all shop skincare products.</p>
+                        <div class="mt-6 text-3xl font-bold font-serif text-goldDark">$99<span class="text-xs text-espresso/60 font-sans font-normal"> / month</span></div>
+                    </div>
+                    <button onclick="bookTreatment('Bronze Glow Program')" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <div class="neu-card p-8 space-y-6 flex flex-col justify-between border-2 border-goldDark/50">
+                    <div>
+                        <span class="text-xs font-bold text-goldDark uppercase tracking-wider">Tier II</span>
+                        <h3 class="text-2xl font-serif font-bold text-softBlack mt-2">Silver Elite Program</h3>
+                        <p class="text-sm text-espresso/70 mt-2">Bi-weekly advanced facials, body treatments, and 15% off retail products.</p>
+                        <div class="mt-6 text-3xl font-bold font-serif text-goldDark">$199<span class="text-xs text-espresso/60 font-sans font-normal"> / month</span></div>
+                    </div>
+                    <button onclick="bookTreatment('Silver Elite Program')" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <div class="neu-card p-8 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-goldDark uppercase tracking-wider">Tier III</span>
+                        <h3 class="text-2xl font-serif font-bold text-softBlack mt-2">24K Gold VIP Program</h3>
+                        <p class="text-sm text-espresso/70 mt-2">Unlimited customized treatments, priority VIP bookings, and complimentary home delivery.</p>
+                        <div class="mt-6 text-3xl font-bold font-serif text-goldDark">$399<span class="text-xs text-espresso/60 font-sans font-normal"> / month</span></div>
+                    </div>
+                    <button onclick="bookTreatment('24K Gold VIP Program')" class="w-full py-3 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Enroll Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 10. EVENTS NAVIGATION PAGE ================= -->
+        <section id="page-events" class="tab-content hidden space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest neu-card text-goldDark">
+                    Masterclasses & Symposiums
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold font-serif text-softBlack">Upcoming Clinic Events</h1>
+                <p class="text-espresso/80 text-base sm:text-lg">
+                    Join our exclusive masterclasses, VIP product launches, and expert-led skin health seminars.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="neu-card p-8 space-y-4">
+                    <span class="bg-neuCard neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark uppercase">Masterclass</span>
+                    <h3 class="text-2xl font-serif font-bold text-softBlack">The Science of Anti-Aging & Radiance</h3>
+                    <p class="text-sm text-espresso/70"><i class="fa-regular fa-calendar text-goldDark mr-2"></i> October 25, 2026 | 2:00 PM - 4:00 PM</p>
+                    <p class="text-sm text-espresso/70"><i class="fa-solid fa-location-dot text-goldDark mr-2"></i> Beverly Hills Gold Lounge</p>
+                    <p class="text-espresso/80 text-sm pt-2">Learn direct dermatological insights from our lead aesthetician with live demonstrations and skin analyzer tests.</p>
+                    <button onclick="bookTreatment('Masterclass: Anti-Aging')" class="mt-4 px-6 py-2.5 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Reserve Seat
+                    </button>
+                </div>
+
+                <div class="neu-card p-8 space-y-4">
+                    <span class="bg-neuCard neu-card px-3 py-1 rounded-full text-xs font-bold text-goldDark uppercase">VIP Night</span>
+                    <h3 class="text-2xl font-serif font-bold text-softBlack">24K Gold Winter Gala & Open House</h3>
+                    <p class="text-sm text-espresso/70"><i class="fa-regular fa-calendar text-goldDark mr-2"></i> November 12, 2026 | 6:00 PM - 9:00 PM</p>
+                    <p class="text-sm text-espresso/70"><i class="fa-solid fa-location-dot text-goldDark mr-2"></i> Manhattan Luxury Spa</p>
+                    <p class="text-espresso/80 text-sm pt-2">An evening of champagne, luxury product previews, live jazz, and exclusive promotional gift bags.</p>
+                    <button onclick="bookTreatment('24K Gold Winter Gala')" class="mt-4 px-6 py-2.5 rounded-xl neu-btn font-semibold text-sm text-goldDark">
+                        Reserve Seat
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shopping Cart Drawer (Shop Navigation Only) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm hidden flex justify-end">
+        <div class="w-full max-w-md bg-neuBg h-full shadow-2xl p-6 flex flex-col justify-between border-l border-neuDark/30">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-neuDark/20">
+                    <h3 class="font-serif font-bold text-xl text-softBlack flex items-center gap-2">
+                        <i class="fa-solid fa-cart-shopping text-goldDark"></i> Shopping Cart
+                    </h3>
+                    <button onclick="toggleCartDrawer()" class="p-2.5 rounded-full neu-btn text-espresso">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div id="cart-items-container" class="py-4 space-y-4 overflow-y-auto max-h-[60vh]">
+                    <p class="text-espresso/60 text-sm text-center py-8">Your cart is currently empty.</p>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-neuDark/20 space-y-4">
+                <div class="flex items-center justify-between font-serif font-bold text-lg text-softBlack">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button onclick="checkoutCart()" class="w-full py-3.5 rounded-2xl neu-btn font-semibold text-goldDark shadow-neu-sm text-center">
+                    Proceed to Secure Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Modal -->
+    <div id="toast-modal" class="fixed bottom-6 right-6 z-50 neu-card px-6 py-4 rounded-2xl shadow-xl hidden transition-all duration-300 transform translate-y-10 opacity-0">
+        <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full neu-card-inset flex items-center justify-center text-goldDark font-bold">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <h4 id="toast-title" class="font-serif font-bold text-sm text-softBlack">Success</h4>
+                <p id="toast-message" class="text-xs text-espresso/70">Action completed successfully.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-20 bg-neuBg border-t border-neuDark/30 py-12 shadow-neu-flat">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-8 h-8 rounded-xl neu-card flex items-center justify-center shadow-neu-sm">
+                    <i class="fa-solid fa-spa text-goldDark text-sm"></i>
+                </div>
+                <span class="text-xl font-bold font-serif gold-gradient-text tracking-wide">Glowery Skin Aesthetics</span>
+            </div>
+            <p class="text-xs text-espresso/70 max-w-md mx-auto">
+                © 2026 Glowery Skin Aesthetics. Neumorphic Soft Tactile Edition. All rights reserved.
+            </p>
+            <div class="flex justify-center space-x-6 text-espresso/70">
+                <a href="#" class="hover:text-goldDark transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-goldDark transition"><i class="fa-brands fa-facebook text-lg"></i></a>
+                <a href="#" class="hover:text-goldDark transition"><i class="fa-brands fa-google text-lg"></i></a>
+                <a href="#" class="hover:text-goldDark transition"><i class="fa-brands fa-pinterest text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let currentTab = 'home';
+        let cart = [];
+        let isMusicPlaying = false;
+
+        function switchTab(tabId) {
+            currentTab = tabId;
+            
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+
+            const targetEl = document.getElementById(`page-${tabId}`);
+            if (targetEl) {
+                targetEl.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            document.querySelectorAll('.nav-link').forEach(btn => {
+                if (btn.getAttribute('data-target') === tabId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Conditional Icons
+            const musicContainer = document.getElementById('header-music-container');
+            const cartContainer = document.getElementById('header-cart-container');
+
+            if (tabId === 'home') {
+                musicContainer.classList.remove('hidden');
+                musicContainer.classList.add('flex');
+            } else {
+                musicContainer.classList.add('hidden');
+                musicContainer.classList.remove('flex');
+                if (isMusicPlaying) {
+                    toggleBackgroundMusic();
+                }
+            }
+
+            if (tabId === 'shop') {
+                cartContainer.classList.remove('hidden');
+                cartContainer.classList.add('flex');
+            } else {
+                cartContainer.classList.add('hidden');
+                cartContainer.classList.remove('flex');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleBackgroundMusic() {
+            const audio = document.getElementById('bg-audio');
+            const strike = document.getElementById('music-strike');
+            
+            if (!isMusicPlaying) {
+                audio.play().then(() => {
+                    isMusicPlaying = true;
+                    strike.classList.add('hidden');
+                    showToast('Music Playing', 'Background spa melodies active.');
+                }).catch(() => {
+                    showToast('Audio Notice', 'Please interact with the page first.');
+                });
+            } else {
+                audio.pause();
+                isMusicPlaying = false;
+                strike.classList.remove('hidden');
+                showToast('Music Muted', 'Background music muted.');
+            }
+        }
+
+        function addToCart(name, price) {
+            const item = cart.find(i => i.name === name);
+            if (item) {
+                item.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+            showToast('Added to Cart', `${name} added to bag.`);
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total-price');
+
+            const totalCount = cart.reduce((sum, i) => sum + i.quantity, 0);
+            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+
+            badge.textContent = totalCount;
+            totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-espresso/60 text-sm text-center py-8">Your cart is currently empty.</p>`;
+            } else {
+                container.innerHTML = cart.map(i => `
+                    <div class="flex items-center justify-between p-3 neu-card-inset">
+                        <div>
+                            <h4 class="font-serif font-bold text-sm text-softBlack">${i.name}</h4>
+                            <p class="text-xs text-espresso/70">$${i.price} x ${i.quantity}</p>
+                        </div>
+                        <button onclick="removeFromCart('${i.name}')" class="text-red-500 hover:text-red-700 text-xs p-2 neu-btn">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(i => i.name !== name);
+            updateCartUI();
+            showToast('Cart Updated', 'Item removed.');
+        }
+
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function checkoutCart() {
+            if (cart.length === 0) {
+                showToast('Cart Empty', 'Please add items before checkout.');
+                return;
+            }
+            showToast('Checkout Successful', 'Thank you for your purchase with Glowery!');
+            cart = [];
+            updateCartUI();
+            toggleCartDrawer();
+        }
+
+        function bookTreatment(title) {
+            showToast('Booking Confirmed', `Appointment for "${title}" reserved.`);
+        }
+
+        function switchAuthTab(type) {
+            const btnSignin = document.getElementById('btn-tab-signin');
+            const btnSignup = document.getElementById('btn-tab-signup');
+            const formSignin = document.getElementById('form-signin');
+            const formSignup = document.getElementById('form-signup');
+
+            if (type === 'signin') {
+                btnSignin.classList.add('text-goldDark', 'border-b-2', 'border-goldDark');
+                btnSignin.classList.remove('text-espresso/40');
+                btnSignup.classList.remove('text-goldDark', 'border-b-2', 'border-goldDark');
+                btnSignup.classList.add('text-espresso/40');
+                formSignin.classList.remove('hidden');
+                formSignup.classList.add('hidden');
+            } else {
+                btnSignup.classList.add('text-goldDark', 'border-b-2', 'border-goldDark');
+                btnSignup.classList.remove('text-espresso/40');
+                btnSignin.classList.remove('text-goldDark', 'border-b-2', 'border-goldDark');
+                btnSignin.classList.add('text-espresso/40');
+                formSignup.classList.remove('hidden');
+                formSignin.classList.add('hidden');
+            }
+        }
+
+        function handleAuthSubmit(e, type) {
+            e.preventDefault();
+            showToast('Success', `${type} action completed.`);
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Message Sent', 'Our concierge team will respond shortly.');
+            e.target.reset();
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast-modal');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-message').textContent = message;
+            
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.remove('translate-y-10', 'opacity-0'), 10);
+            setTimeout(() => {
+                toast.classList.add('translate-y-10', 'opacity-0');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 3500);
+        }
+
+        window.onload = function() {
+            switchTab('home');
+        };
+    </script>
+</body>
+</html>
